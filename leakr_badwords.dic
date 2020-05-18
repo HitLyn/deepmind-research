@@ -1,0 +1,112 @@
+;; Format described in
+;; https://g3doc.corp.google.com/testing/leakr/g3doc/dictionaries.md
+;; TODO(b/77647899): Find a way to avoid duplication.
+
+;; Bad words to avoid
+adbrain;2;
+$RE:(^|[\W])((?i)bamm(?-i))($|[\W]);2;Use regex as bamm is a common letter combo
+mactruck;2;
+$RE:(^|[\W])((?i)rdma(?-i))($|[\W]);2;Use regex as rdma is a common letter combo
+seastar;2;
+$RE:(^|[\W])((?i)borg(?-i))($|[\W]);1;Use regex as borg is a common letter combo
+$RE:blaze\s+;2;Blaze commands
+mognet;2;
+techila;2;
+/cns/;2;
+LEARNING_BRAIN;2;
+stellar;1;
+positron;2;
+xitron;2;
+$RE:(^|[\W])((?i)gluon(?-i))($|[\W]);2;Use regex as gluon is a substring of a username
+/placer/;2;
+meta_architect;2;
+meta architect;2;
+Meta architect;2;
+metaarchitect;2;
+MetaArchitect;2;
+fileutil;2;
+bigstore;2;
+
+
+;; XLA and Jellyfish-related terms.
+techila;2;
+;; Warning because jellyfish is a label in imagenet and others
+jellyfish;1;
+jelly fish;2;
+jellydonut;2;
+jelly donut;2;
+dragonfish;2;
+dragon fish;2;
+dragondonut;2;
+dragon donut;2;
+;; Warning because WordNet has "blowfish, sea squab, puffer, pufferfish" as a label
+pufferfish;1;
+puffer fish;2;
+puffydonut;2;
+puffy donut;2;
+futurefish;2;
+future fish;2;
+darwinn;2;
+barnacore;2;
+barna core;2;
+barnacle;2;
+nautilus;1;chambered nautilus
+polyp;1;
+XLA:JF;2;
+
+;; Cloud TPU terms
+redvm;2;
+red vm;2;
+greenvm;2;
+green vm;2;
+cloudtpu-imagenet-data;2;
+gs://cloudtpu-imagenet-data;2;
+
+;; Internal tools
+XManager;2;
+xmanager;2;
+XData;2;
+xdata;1;
+mldash;2;
+MLDash;2;
+$RE:(^|[\W])((?i)uptc(?-i))($|[\W]);2;Use regex as uptc is a common letter combo
+
+;; OSS licensing wants this to be true
+google3;2;
+
+;; make sure internal paths don't make it out
+net/proto2;2;
+tensorflow.google;2;
+tensor2tensor.google;2;
+tensor2tensor/google;2;
+mesh_tensorflow.google;2;
+mesh_tensorflow/google;2;
+tensorflow_datasets.google;2;
+tensorflow_datasets/google;2;
+tensorflow_gan.google;2;
+tensorflow_gan/google;2;
+g3doc;2;
+
+;; Override default dictionary and make the following errors instead
+;; of warnings.
+//go/;2;//go/import-review
+//goto/;2;
+//cr/;2;
+//cs/;2;
+//test/;2;
+//sites/;2;
+//colab/;2;
+a/google.com;2;
+corp.google.com;2;
+.googleplex.com;2;
+.mtv;2;
+sandbox.;2;
+$RE:(^|[\s])((?i)cs\/(?-i));2;Use regex as cs is a common letter combo
+$RE:(^|[\s])((?i)go\/(?-i));2;Use regex as go is a common letter combo
+
+;; Python 3 compatibility
+basestring;2;
+
+;; Daredevil-related terms
+daredevil;1;
+drishti;1;
